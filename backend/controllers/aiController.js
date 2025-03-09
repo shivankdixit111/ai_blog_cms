@@ -1,0 +1,16 @@
+const OpenAi = require('openai')
+
+const generateSEO = async(title)=>{
+    const  {GoogleGenerativeAI}  = require('@google/generative-ai')
+
+    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+
+    const prompt = `Suggest a SEO friendly title for : ${title} give title of only one line not more than that no any extra symbol`;
+
+    const result = await model.generateContent(prompt);
+    console.log(result.response.text());
+    return result.response.text();
+}
+
+module.exports = generateSEO;
