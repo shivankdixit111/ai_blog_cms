@@ -10,7 +10,8 @@ app.use(express.json())
 
 /** ------  connecting frontnd  ----- */
 const corsOptions = {
-    origin: "http://localhost:5173",
+    // origin: "http://localhost:5173",
+    origin: "https://ai-blog-cms.vercel.app/",
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true
 }
